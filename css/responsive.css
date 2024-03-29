@@ -1,0 +1,204 @@
+/* DESKTOP 1920px */
+@media screen and (max-width: 1920px) {
+    h1 {
+        padding-top: 10vw;
+        padding-left: 25vw;
+      }
+
+    .dec-c {
+        padding-left: 33vw;
+        padding-top: 4vw;
+    }
+
+    .button-r,
+    .button-l {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .a-1 {
+        width: 60vw;
+      }
+
+      .a-2 {
+        width: 25vw;
+      }
+    
+      .a-3 {
+        width: 20vw;
+      }
+    
+      .a-4 {
+        width: 25vw;
+      }
+
+      .a-5 {
+        width: 20vw;
+      }
+
+      .a-6 {
+        width: 10vw;
+      }
+      .a-6-1 {
+        width: 10vw;
+    
+      }
+      .a-7 {
+        width: 20vw;
+      }
+      .a-8 {
+        width: 20vw;
+      }
+      .a-9 {
+        width: 20vw;
+      }
+
+      .h2-w2 {
+        padding-left: 24vw;
+      }
+      .logo-c {
+        width: 15vw;
+        margin-left: 0vw;
+        margin-top: 1vw;
+      }
+}
+
+/* DESKTOP 1440px */
+@media screen and (max-width: 1440px) {
+    h1 {
+        padding-top: 18vw;
+        padding-left: 22vw;
+      }
+
+    .dec-c {
+        padding-left: 30vw;
+        padding-top: 12vw;
+        width: 45vw;
+        height:45vw;
+    }
+
+    .logo-c {
+        width: 15vw;
+        margin-left: 1vw;
+        margin-top: 1vw;
+      }
+
+      .eye-bg {
+        padding-left: 10vw;
+        padding-top: 4vh;
+        width: 80vw;
+       }
+
+       .eye {
+        height: 30vw;
+        width: 30vw;
+        background: #8223A9;
+        margin-top: 3vw;
+        margin-left: 37vw;
+      }
+    
+      .eye:after { /*pupil*/
+        width: 15vw;
+        height: 15vw;
+      }
+
+      .h2-w {
+        padding-top: 50vh;
+        padding-left: 22vw;
+        width: 60vw;
+      }
+
+      .stars {
+        padding-top: 54vh;
+        padding-left: 10vw;
+      }
+
+      h2 {
+        font-size: 8vw;
+      }
+
+      .h2-w2 {
+        width: 60vw;
+        padding-left: 23vw;
+        padding-top: 32vw;
+      }
+
+      /* TABLET-horizontal */
+      @media screen and (max-width: 1130px) and (orientation: landscape) {
+        .stars {
+            padding-top: 52vh;
+            padding-left: 10vw;
+          }
+
+          .h2-w2 {
+            width: 60vw;
+            padding-left: 23vw;
+            padding-top: 40vw;
+          }
+      }
+
+      /* TABLET-portrait */
+      @media screen and (max-width: 834px) and (orientation: portrait) {
+        .container{
+            display: none;
+        } 
+        .cover {
+            display: flex;
+            justify-content: center;
+        }
+
+      }
+
+      /* MOBILE-horizontal */
+      @media screen and (max-width: 800px) and (orientation: landscape) {
+        .logo-c {
+            width: 25vw;
+            margin-left: 1vw;
+            margin-top: 1vw;
+          }
+
+        .button-r,
+        .button-l {
+        width: 6vw;
+        height: 6vw;
+    }
+      }
+
+      /* MOBILE-portrait */
+      @media screen and (max-width: 800px) and (orientation: portrait) {
+        .container{
+            display: none;
+        } 
+        .cover {
+            display: flex;
+            justify-content: center;
+        }
+        .eye-bg {
+            padding-left: 15vw;
+            padding-top: 4vh;
+            width: 70vw;
+           }
+    
+           .eye {
+            height: 26vw;
+            width: 26vw;
+            background: #8223A9;
+            margin-top: 4vw;
+            margin-left: 39vw;
+          }
+        
+          .eye:after { /*pupil*/
+            width: 15vw;
+            height: 15vw;
+          }
+
+          .h2-w2 {
+            width: 60vw;
+            padding-left: 22vw;
+            padding-top: 28vw;
+          }
+
+        
+      }
+
+}

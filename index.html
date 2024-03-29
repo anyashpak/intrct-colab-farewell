@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивный колаб (прощальный)</title>
+    <link rel="icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="cover">
+    <img src="./img/cover-img.svg" class="cover-img" alt="">
+</div>
+<div class="container">
+
+    <!-- scripts -->
+    <script src="./js/matter.js"></script>
+    <script src="./js/jquery-3.7.1.js"></script>
+
+
+            <!-- header -->
+            <div class="header">
+                <div class="buttons-script">
+                  <div class="buttons">
+                    <div class="button-r" id="button-r" >
+                      <img src="./img/chevron-left.svg" class="ar1" alt="">
+                      <script>
+                     
+                        document.getElementById('button-r').addEventListener('click', scrollToSpacer);
+                        function scrollToSpacer() {
+                            const pgwr1Element = document.querySelector('.spacer');
+                            if (pgwr1Element) {
+                                pgwr1Element.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }}
+                        
+                      </script>
+                    </div>
+              
+                    <div class="button-l" id="button-l">
+                      <img src="./img/chevron-right.svg" class="ar2" alt="">
+                      <script>
+                        document.getElementById('button-l').addEventListener('click', scrollToPgwr3);
+                        function scrollToPgwr3() {
+                            const pgwr2Element = document.querySelector('.pgwr-3');
+                            if (pgwr2Element) {
+                                pgwr2Element.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }}
+
+                        document.getElementById('button-l').addEventListener('click', scrollToPgwr2);
+                        function scrollToPgwr2() {
+                            const pgwr1Element = document.querySelector('.pgwr-2');
+                            if (pgwr1Element) {
+                                pgwr1Element.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }}
+
+                      </script>
+                    </div>
+                  </div>
+                </div>
+                
+                  <img src="./img/logo.svg" class="logo-c">
+    
+            <!-- header div close -->
+              </div>
+
+    <div class="pgwr-1">
+
+
+    <!-- for heading -->
+    <div class="heading-wrapper">       
+        <div class="dec">
+            <img src="./img/dec-1.svg"  class="dec-c">
+          </div>
+
+          <div class="heading">
+            <h1>we mix<br>science and<br>fun</h1>
+          </div>
+      </div>
+
+    <!-- for matter js -->
+    <div class="matter-wrapper">
+
+        <canvas id="canvas-target"></canvas>
+      <!-- scripts link -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js" integrity="sha512-5T245ZTH0m0RfONiFm2NF0zcYcmAuNzcGyPSQ18j8Bs5Pbfhp5HP1hosrR8XRt5M3kSRqzjNMYpm2+it/AUX/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdn.jsdelivr.net/npm/pathseg@1.2.1/pathseg.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
+
+     <!-- embd-scripts -->
+     <div class="matter-container">
+        <script>
+    const canvas = document.querySelector("#canvas-target")
+    
+    // module aliases
+    let Engine = Matter.Engine,
+        Render = Matter.Render,
+        Runner = Matter.Runner,
+        Bodies = Matter.Bodies,
+        Composite = Matter.Composite,
+        Mouse = Matter.Mouse,
+        MouseConstraint = Matter.MouseConstraint;
+    
+    
+    
+    // create an engine
+    let engine = Engine.create();
+    
+    // create a renderer
+    let render = Render.create({
+        canvas: canvas,
+        engine: engine,
+        options: {
+        background: "transparent",
+        wireframes: false,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      }
+    
+    });
+    
+    
+    //create objects
+    const createObject = () => {
+    
+      let box_1 = Bodies.rectangle(1000, 200, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/blue-ms-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_1);
+    
+    let box_2 = Bodies.rectangle(200, 250, 200,200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/m-sq-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_2);
+    
+    let box_3 = Bodies.rectangle(300, 400, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/green-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_3);
+    
+    let box_4 = Bodies.rectangle(400, 100, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/Star-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_4);
+    
+    let box_5 = Bodies.rectangle(800, 800, 300, 300,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/bottle-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_5);
+    
+    let box_6 = Bodies.rectangle(1200, 800, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/pink-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_6);
+    
+    let box_7 = Bodies.rectangle(600, 600, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/green-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_7);
+    
+    let box_8 = Bodies.rectangle(900, 250, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/m-sq-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_8);
+    
+    let box_9 = Bodies.rectangle(500, 500, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/blue-ms-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_9);
+    
+    let box_10 = Bodies.rectangle(200, 600, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/pink-small.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_10);
+    
+    let box_11 = Bodies.rectangle(1000,300, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/rsh1.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_11);
+    
+    let box_12 = Bodies.rectangle(300,300, 200, 200,  
+      {
+      render: {
+        sprite: {
+          texture: "./img/rsh3.svg"
+        }
+      }
+    }
+    );
+    Composite.add(engine.world, box_12);
+    
+    }
+    
+    createObject();
+    
+    
+    //create ground
+    let ground = Bodies.rectangle(400, window.innerHeight, 3000, 1, {
+        isStatic: true,
+        render: {
+      fillStyle: 'transparent',
+    }
+    });
+    Composite.add(engine.world, ground);
+    
+    //add walls
+    let leftWall = Bodies.rectangle(0, window.innerHeight / 2, 1, window.innerHeight, { isStatic: true, 
+      render: {
+      fillStyle: 'transparent',
+    }  
+    });
+    let rightWall = Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 1, window.innerHeight, { isStatic: true,
+      render: {
+      fillStyle: 'transparent',
+    } });
+    
+    // add all of the bodies to the world
+    Composite.add(engine.world, leftWall);
+    Composite.add(engine.world, rightWall);
+    
+    // run the renderer
+    Render.run(render);
+    
+    // create runner
+    let runner = Runner.create();
+    
+    // run the engine
+    Runner.run(runner, engine);
+    let mouse = Mouse.create(render.canvas);
+    let mouseConstraint = MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        stiffness: 0.2,
+        render: {
+          visible: false
+        }
+      }
+    });
+    Composite.add(engine.world, mouseConstraint);
+        </script>
+        </div>
+    </div>      
+    </div>
+
+
+
+
+    <div class="spacer" style="z-index: 0;"></div>
+    <!-- <div class="pgwr-0"></div> -->
+
+
+    <div class="pgwr-2">
+        <img src="./img/for eye.svg" class="eye-bg">
+            <h2 class="h2-w">we focuses <br>on what’s interesting</h2>
+            <img src="./img/stars.svg" class="stars" alt="">
+            <div class='eye'></div>
+
+
+            <script>
+$(".pgwr-2").mousemove(function(event) {
+  var eye = $(".eye");
+  console.log('eye', eye)
+  var x = (eye.offset().left) + (eye.width() / 2);
+  var y = (eye.offset().top) + (eye.height() / 2);
+  var rad = Math.atan2(event.pageX - x, event.pageY - y);
+  var rot = (rad * (180 / Math.PI) * -1) + 30;
+  eye.css({
+    '-webkit-transform': 'rotate(' + rot + 'deg)',
+    '-moz-transform': 'rotate(' + rot + 'deg)',
+    '-ms-transform': 'rotate(' + rot + 'deg)',
+    'transform': 'rotate(' + rot + 'deg)'
+  });
+});
+            </script>
+    </div> 
+
+
+    <div class="pgwr-3" >
+        <h2 class="h2-w2">we help invent and create</h2>
+        <!-- onload="attachDragListeners(this)" -->
+        <div class="positioning">
+            <div class="element">
+        <img src="./img/dd-1.svg" class="a-1" >
+    </div> 
+
+     <div class="element">
+        <img src="./img/dd-2.svg" class="a-2"> 
+    </div>
+
+    <div class="element">
+        <img src="./img/dd-3.svg" class="a-3"> 
+    </div>
+
+    <div class="element">
+        <img src="./img/dd-4.svg" class="a-4">
+    </div>
+
+    <div class= "element">
+        <img src="./img/dd-5.svg" class="a-5">
+    </div>
+
+    <div class="element">
+        <img src="./img/dd-6.svg" class="a-6">
+    </div>
+
+    <div class="element">
+        <img src="./img/dd-6.svg" class="a-6-1"> 
+    </div>
+
+    <div class="element">
+        <img src="./img/dd-7.svg" class="a-7">
+    </div>
+
+    <div class="element">
+        <img src="./img/dd-8.svg" class="a-8">
+    </div>
+
+    <div class="element">
+        <img src="./img/dd-9.svg" class="a-9">
+    </div>
+</div>
+    
+
+
+    <script>
+const wrapper = document.querySelector(".positioning");
+const svgElements = wrapper.querySelectorAll("img[class^='a-']"); // Target SVG elements
+
+function onDrag(event, svgElement) {
+  event.preventDefault(); // Prevent default behavior
+
+  const svgStyle = window.getComputedStyle(svgElement);
+  const leftVal = parseInt(svgStyle.left, 10);
+  const topVal = parseInt(svgStyle.top, 10);
+
+  svgElement.style.left = `${leftVal + event.movementX}px`;
+  svgElement.style.top = `${topVal + event.movementY}px`;
+}
+
+svgElements.forEach(svg => {
+  svg.addEventListener("mousedown", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const initialX = event.offsetX - svg.offsetLeft;
+    const initialY = event.offsetY - svg.offsetTop;
+
+    svg.addEventListener("mousemove", (moveEvent) => {
+      onDrag(moveEvent, svg, initialX, initialY);
+    });
+
+    // Remove the mousemove listener from *this* SVG element on mouseup anywhere on the document
+    document.addEventListener("mouseup", () => {
+      svg.removeEventListener("mousemove", onDrag);
+    });
+  });
+});
+
+    </script>
+    </div> 
+
+
+<!-- container div close -->
+</div> 
+
+
+
+
+
+    
+</body>
+</html>
